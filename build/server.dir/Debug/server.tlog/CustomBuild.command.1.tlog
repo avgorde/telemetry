@@ -1,0 +1,10 @@
+^D:\AVI\TELEMETRY\TELEMETRY\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/avi/telemetry/telemetry -BD:/avi/telemetry/telemetry/build --check-stamp-file D:/avi/telemetry/telemetry/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

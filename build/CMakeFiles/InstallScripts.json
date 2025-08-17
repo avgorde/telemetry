@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/avi/telemetry/telemetry/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

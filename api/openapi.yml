@@ -1,0 +1,69 @@
+openapi: 3.0.0
+info:
+  title: GPU Telemetry API
+  version: 1.0.0
+paths:
+  /api/v1/gpus:
+    get:
+      summary: List GPUs
+      responses:
+        '200':
+          description: list of GPU IDs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+  /api/v1/gpus/{id}/telemetry:
+    get:
+      summary: Get telemetry for a GPU
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: start_time
+          in: query
+          schema:
+            type: integer
+            description: epoch ms (inclusive)
+        - name: end_time
+          in: query
+          schema:
+            type: integer
+            description: epoch ms (inclusive)
+      responses:
+        '200':
+          description: telemetry array
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    gpu_id: { type: string }
+                    ts: { type: integer }
+                    gpu_util: { type: number }
+                    memory_util: { type: number }
+                    temperature: { type: number }
+  /api/v1/ingest:
+    post:
+      summary: Ingest telemetry
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                gpu_id: { type: string }
+                ts: { type: integer }
+                gpu_util: { type: number }
+                memory_util: { type: number }
+                temperature: { type: number }
+      responses:
+        '200':
+          description: ok

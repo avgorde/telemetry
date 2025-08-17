@@ -1,0 +1,3 @@
+D:/avi/telemetry/telemetry/build/CMakeFiles/server.dir
+D:/avi/telemetry/telemetry/build/CMakeFiles/ALL_BUILD.dir
+D:/avi/telemetry/telemetry/build/CMakeFiles/ZERO_CHECK.dir

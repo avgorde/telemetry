@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\avi\telemetry\telemetry\build\CMakeFiles\1600f0cd7032699241ef840be25de85a\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{42F2D70A-4109-3E28-A994-1472BAD5EAD8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,14 @@
+FROM ubuntu:22.04 AS build
+RUN apt-get update && apt-get install -y build-essential cmake libsqlite3-dev libcurl4-openssl-dev git
+WORKDIR /app
+COPY . .
+RUN mkdir build && cd build && cmake .. && cmake --build . --target server
+
+FROM ubuntu:22.04
+RUN apt-get update && apt-get install -y ca-certificates libsqlite3-0 libcurl4
+COPY --from=build /app/build/server /bin/server
+VOLUME ["/data"]
+WORKDIR /data
+ENV DB_PATH=/data/telemetry.db
+EXPOSE 8080
+CMD ["/bin/server"]
